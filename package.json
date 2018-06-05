@@ -7,7 +7,9 @@
     "lodash": "4.17.10"
   },
   "devDependencies": {
-    "jest": "23.0.1"
+    "eslint": "4.19.1",
+    "jest": "23.0.1",
+    "prettier": "1.13.4"
   },
   "scripts": {
     "test": "jest lib/data-structures # jest # mocha src/**/*spec.js # jasmine JASMINE_CONFIG_PATH=jasmine.json # node jasmine-runner.js",
