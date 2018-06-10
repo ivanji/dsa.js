@@ -6,8 +6,19 @@ class HSet {
    * Initialize (Hash)map for the set
    * @param {Map|HashMap} Type data structure for the set
    */
-  constructor(Type = Map) {
-    this.hashMap = new Type();
+  constructor(iterableOrType = [], options = { Type: Map }) {
+    let initialData;
+    let DataType;
+
+    if (iterableOrType[Symbol.iterator]) {
+      initialData = iterableOrType.map(i => [i]);
+      DataType = options.Type;
+    } else {
+      initialData = [];
+      DataType = iterableOrType;
+    }
+
+    this.hashMap = new DataType(initialData);
   }
 
   /**

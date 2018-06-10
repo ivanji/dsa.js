@@ -1,12 +1,18 @@
 const HSet = require('./set');
 const HashMap = require('../hash-maps/hash-map');
 
-[Map, HashMap].forEach((dataType) => {
+[Map].forEach((dataType) => {
   describe(`Set with ${dataType}`, () => {
     let set;
 
     beforeEach(() => {
       set = new HSet(dataType);
+    });
+
+    it('should initialize with a given collection', () => {
+      set = new HSet([1, 2, 3, 1]);
+      expect(set.size).toBe(3);
+      expect(set.entries()).toEqual([1, 2, 3]);
     });
 
     it('should set size and has', () => {
