@@ -1,8 +1,5 @@
 DIR = dist
 
-# INPUT = sample
-# OUTPUT = sample
-
 INPUT = book
 OUTPUT = book
 # OUTPUT = book-$(date +%Y-%m-%d)
