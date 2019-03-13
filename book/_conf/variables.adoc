@@ -51,7 +51,7 @@ endif::[]
 ifdef::backend-pdf[]
 :media: prepress
 :pdf-stylesdir: _resources/pdfstyles
-:pdf-style: default
+:pdf-style: custom
 :mathematical-format: png
 endif::[]
 
