@@ -39,7 +39,7 @@ pdf:
 	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.adoc; \
 
 sample-pdf:
-	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf sample.adoc; \
+	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=sample.pdf sample.adoc; \
 
 # Courtesy of
 # http://www.smartjava.org/content/compress-pdf-mac-using-command-line-free

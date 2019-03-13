@@ -1,17 +1,36 @@
 font:
   catalog:
+
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
     Noto Serif:
-      normal: notoserif-regular-subset.ttf
-      bold: notoserif-bold-subset.ttf
-      italic: notoserif-italic-subset.ttf
-      bold_italic: notoserif-bold_italic-subset.ttf
+      normal: NotoSerif-Regular.ttf
+      bold: NotoSerif-Bold.ttf
+      italic: NotoSerif-Italic.ttf
+      bold_italic: NotoSerif-Bold.ttf
+      # normal: notoserif-regular-subset.ttf
+      # bold: notoserif-bold-subset.ttf
+      # italic: notoserif-italic-subset.ttf
+      # bold_italic: notoserif-bold_italic-subset.ttf
+
+    Roboto Slab:
+      normal: RobotoSlab-Regular.ttf
+      bold: RobotoSlab-Bold.ttf
+      italic: RobotoSlab-Light.ttf
+      bold_italic: RobotoSlab-Bold.ttf
+
+    Fira Code:
+      normal: FiraCode-Regular.ttf
+      bold: FiraCode-Bold.ttf
+      italic: FiraCode-Italic.ttf
+      bold_italic: FiraCode-Bold-italic.ttf
+
     # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
       normal: mplus1mn-regular-ascii-conums.ttf
       bold: mplus1mn-bold-ascii.ttf
       italic: mplus1mn-italic-ascii.ttf
       bold_italic: mplus1mn-bold_italic-ascii.ttf
+
     # M+ 1p supports Latin, Latin-1 Supplement, Latin Extended, Greek, Cyrillic, Vietnamese, Japanese & an assortment of symbols
     # It also provides arrows for ->, <-, => and <= replacements in case these glyphs are missing from font
     M+ 1p Fallback:
@@ -19,8 +38,112 @@ font:
       bold: mplus1p-regular-fallback.ttf
       italic: mplus1p-regular-fallback.ttf
       bold_italic: mplus1p-regular-fallback.ttf
+
+    ####################
+    # Emoji fonts
+    ####################
+
+    EmojiOne Apple:
+      normal: emojione-apple.ttf
+      bold: emojione-apple.ttf
+      italic: emojione-apple.ttf
+      bold_italic: emojione-apple.ttf
+
+    # https://github.com/asciidoctor/asciidoctor-pdf/issues/323#issuecomment-143966293
+    OpenSansEmoji:
+      normal: OpenSansEmoji.ttf
+      bold: OpenSansEmoji.ttf
+      italic: OpenSansEmoji.ttf
+      bold_italic: OpenSansEmoji.ttf
+
+    Symbola:
+      normal: Symbola.ttf
+      bold: Symbola.ttf
+      italic: Symbola.ttf
+      bold_italic: Symbola.ttf
+
+    # https://github.com/emojione/emojione/tree/master/extras/fonts
+    Emojione:
+      normal: emojione-android.ttf
+      bold: emojione-android.ttf
+      italic: emojione-android.ttf
+      bold_italic: emojione-android.ttf
+
+    # https://www.google.com/get/noto/#emoji-zsye-color
+    NotoColorEmoji:
+      normal: NotoColorEmoji.ttf
+      bold: NotoColorEmoji.ttf
+      italic: NotoColorEmoji.ttf
+      bold_italic: NotoColorEmoji.ttf
+
+    # https://graphicdesign.stackexchange.com/a/64918
+    NotoEmoji:
+      normal: NotoEmoji-Regular.ttf
+      bold: NotoEmoji-Regular.ttf
+      italic: NotoEmoji-Regular.ttf
+      bold_italic: NotoEmoji-Regular.ttf
+
+    DejaVuSans:
+      normal: DejaVuSans.ttf
+      bold: DejaVuSans.ttf
+      italic: DejaVuSans.ttf
+      bold_italic: DejaVuSans.ttf
+
+    gkai00mp:
+      normal: gkai00mp.ttf
+      bold: gkai00mp.ttf
+      italic: gkai00mp.ttf
+      bold_italic: gkai00mp.ttf
+
+    AndroidEmoji:
+      normal: AndroidEmoji.ttf
+      bold: AndroidEmoji.ttf
+      italic: AndroidEmoji.ttf
+      bold_italic: AndroidEmoji.ttf
+
+    AppleEmoji:
+      normal: AppleEmoji.10.2Full.ttf
+      bold: AppleEmoji.10.2Full.ttf
+      italic: AppleEmoji.10.2Full.ttf
+      bold_italic: AppleEmoji.10.2Full.ttf
+
+    AppleColorEmoji:
+      normal: AppleColorEmoji.ttf
+      bold: AppleColorEmoji.ttf
+      italic: AppleColorEmoji.ttf
+      bold_italic: AppleColorEmoji.ttf
+
+    AppleColorEmoji-sbix:
+      normal: AppleColorEmoji-sbix.ttf
+      bold: AppleColorEmoji-sbix.ttf
+      italic: AppleColorEmoji-sbix.ttf
+      bold_italic: AppleColorEmoji-sbix.ttf
+
+    AppleColorEmoji-SVG:
+      normal: AppleColorEmoji-SVG.ttf
+      bold: AppleColorEmoji-SVG.ttf
+      italic: AppleColorEmoji-SVG.ttf
+      bold_italic: AppleColorEmoji-SVG.ttf
+
   fallbacks:
-    - M+ 1p Fallback
+    - DejaVuSans # some emojis and characters
+    - NotoEmoji # most of the emojis working
+    - OpenSansEmoji # some work
+    - Symbola # most works emojis some don't
+    - AppleColorEmoji-SVG # works b&w
+    - M+ 1mn # needed for conum inside the code
+    - M+ 1p Fallback # no emojis
+
+    # - AppleColorEmoji # All of them works! B&W
+
+    # - gkai00mp # not working
+    # - AndroidEmoji # not working
+    # - AppleColorEmoji-sbix # doesn't work
+
+    # - NotoColorEmoji # Error out: undefined method `key?' for nil:NilClass
+    # - EmojiOne Apple # not working
+    # - AppleEmoji # error
+    # - Emojione
 
 page:
   background_color: ffffff
@@ -40,6 +163,7 @@ base:
   # color as CMYK array (approximated)
   #font_color: [0, 0, 0, 0.92]
   #font_color: [0, 0, 0, 92%]
+  # font_family: Roboto Slab
   font_family: Noto Serif
   # choose one of these font_size/line_height_length combinations
   #font_size: 14
@@ -74,10 +198,11 @@ vertical_spacing: $vertical_rhythm
 link:
   font_color: 428bca
 
+# also used for code font family
 # literal is currently used for inline monospaced in prose and table cells
 literal:
   font_color: b12146
-  font_family: M+ 1mn
+  font_family: Fira Code
 
 menu_caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
 
