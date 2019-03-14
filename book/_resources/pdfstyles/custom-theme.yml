@@ -130,11 +130,11 @@ font:
     - NotoEmoji # most of the emojis working
     - OpenSansEmoji # some work
     - Symbola # most works emojis some don't
-    - AppleColorEmoji-SVG # works b&w
+    - AppleColorEmoji # All of them works! B&W
+    # - AppleColorEmoji-SVG # works but b&w no svg colors :(
     - M+ 1mn # needed for conum inside the code
     - M+ 1p Fallback # no emojis
 
-    # - AppleColorEmoji # All of them works! B&W
 
     # - gkai00mp # not working
     # - AndroidEmoji # not working
