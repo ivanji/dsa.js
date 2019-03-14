@@ -43,12 +43,6 @@ font:
     # Emoji fonts
     ####################
 
-    EmojiOne Apple:
-      normal: emojione-apple.ttf
-      bold: emojione-apple.ttf
-      italic: emojione-apple.ttf
-      bold_italic: emojione-apple.ttf
-
     # https://github.com/asciidoctor/asciidoctor-pdf/issues/323#issuecomment-143966293
     OpenSansEmoji:
       normal: OpenSansEmoji.ttf
@@ -61,13 +55,6 @@ font:
       bold: Symbola.ttf
       italic: Symbola.ttf
       bold_italic: Symbola.ttf
-
-    # https://github.com/emojione/emojione/tree/master/extras/fonts
-    Emojione:
-      normal: emojione-android.ttf
-      bold: emojione-android.ttf
-      italic: emojione-android.ttf
-      bold_italic: emojione-android.ttf
 
     # https://www.google.com/get/noto/#emoji-zsye-color
     NotoColorEmoji:
@@ -89,41 +76,11 @@ font:
       italic: DejaVuSans.ttf
       bold_italic: DejaVuSans.ttf
 
-    gkai00mp:
-      normal: gkai00mp.ttf
-      bold: gkai00mp.ttf
-      italic: gkai00mp.ttf
-      bold_italic: gkai00mp.ttf
-
-    AndroidEmoji:
-      normal: AndroidEmoji.ttf
-      bold: AndroidEmoji.ttf
-      italic: AndroidEmoji.ttf
-      bold_italic: AndroidEmoji.ttf
-
-    AppleEmoji:
-      normal: AppleEmoji.10.2Full.ttf
-      bold: AppleEmoji.10.2Full.ttf
-      italic: AppleEmoji.10.2Full.ttf
-      bold_italic: AppleEmoji.10.2Full.ttf
-
     AppleColorEmoji:
       normal: AppleColorEmoji.ttf
       bold: AppleColorEmoji.ttf
       italic: AppleColorEmoji.ttf
       bold_italic: AppleColorEmoji.ttf
-
-    AppleColorEmoji-sbix:
-      normal: AppleColorEmoji-sbix.ttf
-      bold: AppleColorEmoji-sbix.ttf
-      italic: AppleColorEmoji-sbix.ttf
-      bold_italic: AppleColorEmoji-sbix.ttf
-
-    AppleColorEmoji-SVG:
-      normal: AppleColorEmoji-SVG.ttf
-      bold: AppleColorEmoji-SVG.ttf
-      italic: AppleColorEmoji-SVG.ttf
-      bold_italic: AppleColorEmoji-SVG.ttf
 
   fallbacks:
     - DejaVuSans # some emojis and characters
