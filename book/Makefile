@@ -9,10 +9,12 @@ MATH = --require=asciidoctor-mathematical
 # HTML5S = --require=asciidoctor-html5s --backend=html5
 REQUIRES = ${DIAGRAM} ${MATH}
 OUTPUT_FOLDER = --destination-dir=${DIR}
+
 MANPAGE = --backend=manpage
 HTML = --backend=html5 -a max-width=75em
 RAW_HTML = --backend=html5 -a stylesheet! -a source-highlighter!
-PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-fontsdir=fonts
+EXTENSIONS = -r ./extensions/asciidoctor-pdf-extensions.rb
+PDF = ${EXTENSIONS} --backend=pdf --require=asciidoctor-pdf -a pdf-fontsdir=fonts -a pdfmarks
 EPUB = --backend=epub3 --require=asciidoctor-epub3
 KINDLE = ${EPUB} -a ebook-format=kf8
 
@@ -39,7 +41,7 @@ pdf:
 	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.adoc; \
 
 sample-pdf:
-	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=sample.pdf sample.adoc; \
+	asciidoctor --trace ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=sample.pdf sample.adoc; \
 
 # Courtesy of
 # http://www.smartjava.org/content/compress-pdf-mac-using-command-line-free

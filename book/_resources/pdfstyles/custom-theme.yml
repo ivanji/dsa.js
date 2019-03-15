@@ -1,28 +1,18 @@
 font:
   catalog:
 
+    Akkurat:
+      normal: Akkurat-Light.ttf
+      bold: Akkurat-Bold.ttf
+      italic: Akkurat-Normal-Italic.ttf
+      bold_italic: Akkurat-Bold-Italic.ttf
+
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
     Noto Serif:
-      normal: NotoSerif-Regular.ttf
-      bold: NotoSerif-Bold.ttf
-      italic: NotoSerif-Italic.ttf
-      bold_italic: NotoSerif-Bold.ttf
-      # normal: notoserif-regular-subset.ttf
-      # bold: notoserif-bold-subset.ttf
-      # italic: notoserif-italic-subset.ttf
-      # bold_italic: notoserif-bold_italic-subset.ttf
-
-    Roboto Slab:
-      normal: RobotoSlab-Regular.ttf
-      bold: RobotoSlab-Bold.ttf
-      italic: RobotoSlab-Light.ttf
-      bold_italic: RobotoSlab-Bold.ttf
-
-    Fira Code:
-      normal: FiraCode-Regular.ttf
-      bold: FiraCode-Bold.ttf
-      italic: FiraCode-Italic.ttf
-      bold_italic: FiraCode-Bold-italic.ttf
+      normal: notoserif-regular-subset.ttf
+      bold: notoserif-bold-subset.ttf
+      italic: notoserif-italic-subset.ttf
+      bold_italic: notoserif-bold_italic-subset.ttf
 
     # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
@@ -38,6 +28,12 @@ font:
       bold: mplus1p-regular-fallback.ttf
       italic: mplus1p-regular-fallback.ttf
       bold_italic: mplus1p-regular-fallback.ttf
+
+    Fira Code:
+      normal: FiraCode-Regular.ttf
+      bold: FiraCode-Bold.ttf
+      italic: FiraCode-Italic.ttf
+      bold_italic: FiraCode-Bold-italic.ttf
 
     ####################
     # Emoji fonts
@@ -81,38 +77,22 @@ font:
       bold: AppleColorEmoji.ttf
       italic: AppleColorEmoji.ttf
       bold_italic: AppleColorEmoji.ttf
-
   fallbacks:
     - DejaVuSans # some emojis and characters
     - NotoEmoji # most of the emojis working
     - OpenSansEmoji # some work
     - Symbola # most works emojis some don't
     - AppleColorEmoji # All of them works! B&W
-    # - AppleColorEmoji-SVG # works but b&w no svg colors :(
-    - M+ 1mn # needed for conum inside the code
-    - M+ 1p Fallback # no emojis
-
-
-    # - gkai00mp # not working
-    # - AndroidEmoji # not working
-    # - AppleColorEmoji-sbix # doesn't work
-
-    # - NotoColorEmoji # Error out: undefined method `key?' for nil:NilClass
-    # - EmojiOne Apple # not working
-    # - AppleEmoji # error
-    # - Emojione
+    - M+ 1p Fallback
 
 page:
   background_color: ffffff
   layout: portrait
   margin: [0.5in, 0.67in, 0.67in, 0.67in]
-  # margin_inner and margin_outer keys are used for recto/verso print margins when media=prepress
-  margin_inner: 0.75in
-  margin_outer: 0.59in
-  size: A4
+  size: LETTER
 
 base:
-  align: left
+  align: justify
   # color as hex string (leading # is optional)
   font_color: 333333
   # color as RGB array
@@ -120,7 +100,6 @@ base:
   # color as CMYK array (approximated)
   #font_color: [0, 0, 0, 0.92]
   #font_color: [0, 0, 0, 92%]
-  # font_family: Roboto Slab
   font_family: Noto Serif
   # choose one of these font_size/line_height_length combinations
   #font_size: 14
@@ -138,7 +117,7 @@ base:
   line_height: $base_line_height_length / $base_font_size
   font_size_large: round($base_font_size * 1.25)
   font_size_small: round($base_font_size * 0.85)
-  font_size_min: $base_font_size * 0.75
+  font_size_min: 7
   font_style: normal
   border_color: eeeeee
   border_radius: 4
@@ -155,23 +134,20 @@ vertical_spacing: $vertical_rhythm
 link:
   font_color: 428bca
 
-# also used for code font family
 # literal is currently used for inline monospaced in prose and table cells
 literal:
   font_color: b12146
   font_family: Fira Code
-
-menu_caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
+#   font_family: M+ 1mn
 
 heading:
-  align: left
   #font_color: 181818
   font_color: $base_font_color
   font_family: $base_font_family
   font_style: bold
-  # h1 is used for part titles (book doctype) or the doctitle (article doctype)
+  # h1 is used for part titles
   h1_font_size: floor($base_font_size * 2.6)
-  # h2 is used for chapter titles (book doctype only)
+  # h2 is used for chapter titles
   h2_font_size: floor($base_font_size * 2.15)
   h3_font_size: round($base_font_size * 1.7)
   h4_font_size: $base_font_size_large
@@ -179,12 +155,13 @@ heading:
   h6_font_size: $base_font_size_small
   #line_height: 1.4
   # correct line height for Noto Serif metrics (comes with built-in line height)
-  line_height: 1
-  margin_top: $vertical_rhythm * 0.4
-  margin_bottom: $vertical_rhythm * 0.9
+  line_height: 1.2
+  margin_top: $vertical_rhythm * 0.2
+  margin_bottom: $vertical_rhythm * 0.8
 
 title_page:
   align: right
+#   font_family: Akkurat
   logo:
     top: 10%
   title:
@@ -203,13 +180,24 @@ title_page:
   revision:
     margin_top: $base_font_size * 1.25
 
-toc:
-  indent: $horizontal_rhythm
-  line_height: 1.4
-  dot_leader:
-    #content: ". "
-    font_color: a9a9a9
-    #levels: 2 3
+# title_page:
+#   align: center
+#   # hide text by default
+#   font_color: ffffff
+#   font_family: Akkurat
+#   font_style: bold
+#   title:
+#     top: 10%
+#     font_size: $heading_h1_font_size * 2
+#     font_color: 181818
+#     text_transform: uppercase
+#     line_height: 1.25
+#   authors:
+#     margin_top: 445.0
+#     font_size: $heading_h1_font_size
+#     font_color: 181818
+#   revision:
+#     margin_top: 0
 
 block:
   margin_top: 0
@@ -217,7 +205,6 @@ block:
 
 caption:
   align: left
-  font_size: $base_font_size * 0.95
   font_style: italic
   # FIXME perhaps set line_height instead of / in addition to margins?
   margin_inside: $vertical_rhythm / 3
@@ -233,34 +220,18 @@ abstract:
   font_size: $lead_font_size
   line_height: $lead_line_height
   font_style: italic
-  first_line_font_style: bold
-  title:
-    align: center
-    font_color: $heading_font_color
-    font_family: $heading_font_family
-    font_size: $heading_h4_font_size
-    font_style: $heading_font_style
 
 admonition:
   column_rule_color: $base_border_color
   column_rule_width: $base_border_width
   padding: [0, $horizontal_rhythm, 0, $horizontal_rhythm]
-  #icon:
-  #  tip:
-  #    name: fa-lightbulb-o
-  #    stroke_color: 111111
-  #    size: 24
-  label:
-    text_transform: uppercase
-    font_style: bold
 
 blockquote:
   font_color: $base_font_color
   font_size: $base_font_size_large
   border_color: $base_border_color
   border_width: 5
-  # FIXME disable negative padding bottom once margin collapsing is implemented
-  padding: [0, $horizontal_rhythm, $block_margin_bottom * -0.75, $horizontal_rhythm + $blockquote_border_width / 2]
+  padding: [$vertical_rhythm / 2, $horizontal_rhythm, $vertical_rhythm / -2, $horizontal_rhythm + $blockquote_border_width / 2]
   cite_font_size: $base_font_size_small
   cite_font_color: 999999
 
@@ -271,8 +242,6 @@ code:
   font_size: ceil($base_font_size)
   padding: $code_font_size
   line_height: 1.25
-  # line_gap is an experimental property to control how a background color is applied to an inline block element
-  line_gap: 3.8
   background_color: f5f5f5
   border_color: cccccc
   border_radius: $base_border_radius
@@ -288,23 +257,23 @@ example:
   border_color: $base_border_color
   border_radius: $base_border_radius
   border_width: 0.75
-  background_color: ffffff
-  # FIXME reenable padding bottom once margin collapsing is implemented
+  background_color: transparent
+  # FIXME reenable margin bottom once margin collapsing is implemented
   padding: [$vertical_rhythm, $horizontal_rhythm, 0, $horizontal_rhythm]
 
 image:
   align: left
 
 prose:
-  margin_top: $block_margin_top
-  margin_bottom: $block_margin_bottom
+  margin_top: 0
+  margin_bottom: $vertical_rhythm
 
 sidebar:
-  background_color: eeeeee
-  border_color: e1e1e1
+  border_color: $page_background_color
   border_radius: $base_border_radius
   border_width: $base_border_width
-  # FIXME reenable padding bottom once margin collapsing is implemented
+  background_color: eeeeee
+  # FIXME reenable margin bottom once margin collapsing is implemented
   padding: [$vertical_rhythm, $vertical_rhythm * 1.25, 0, $vertical_rhythm * 1.25]
   title:
     align: center
@@ -321,59 +290,57 @@ thematic_break:
   margin_bottom: $vertical_rhythm * 1.5
 
 description_list:
-  term_font_style: bold
+  term_font_style: italic
   term_spacing: $vertical_rhythm / 4
   description_indent: $horizontal_rhythm * 1.25
 
 outline_list:
   indent: $horizontal_rhythm * 1.5
-  #marker_font_color: 404040
-  # NOTE outline_list_item_spacing applies to list items that do not have complex content
+  # NOTE item_spacing applies to list items that do not have complex content
   item_spacing: $vertical_rhythm / 2
+  #marker_font_color: 404040
 
 table:
   background_color: $page_background_color
   #head_background_color: <hex value>
   #head_font_color: $base_font_color
   head_font_style: bold
-  #body_background_color: <hex value>
-  body_stripe_background_color: f9f9f9
+  even_row_background_color: f9f9f9
+  #odd_row_background_color: <hex value>
   foot_background_color: f0f0f0
   border_color: dddddd
   border_width: $base_border_width
-  cell_padding: 3
+  # HACK accounting for line-height
+  cell_padding: [3, 3, 6, 3]
 
-# NOTE in addition to footer, header is also supported
-footer:
-  font_size: $base_font_size_small
-  # NOTE if background_color is set, background and border will span width of page
-  border_color: dddddd
-  border_width: 0.25
-  height: $base_line_height_length * 2.5
+toc:
+  dot_leader_font_color: a9a9a9
+  #dot_leader_content: '. '
+  indent: $horizontal_rhythm
+  line_height: 1.4
+
+header:
+  font_color: A6A6A6
+  height: 0.5in
   line_height: 1
-  padding: [$base_line_height_length / 2, 1, 0, 1]
-  vertical_align: top
-  #image_vertical_align: <alignment> or <number>
-  # additional attributes for content:
-  # * {page-count}
-  # * {page-number}
-  # * {document-title}
-  # * {document-subtitle}
-  # * {chapter-title}
-  # * {section-title}
-  # * {section-or-chapter-title}
+  columns: =100%
   recto:
-    #columns: "<50% =0% >50%"
+    center:
+      content: '{chapter-title}'
+  verso:
+    center:
+      content: '{document-title}'
+
+footer:
+  font_color: [61, 51, 45, 5]
+  font_size: $base_font_size_small
+  font_style: bold
+  height: 0.5in
+  line_height: 1
+  columns: <50% >50%
+  recto:
     right:
       content: '{page-number}'
-      #content: '{section-or-chapter-title} | {page-number}'
-      #content: '{document-title} | {page-number}'
-    #center:
-    #  content: '{page-number}'
   verso:
-    #columns: $footer_recto_columns
     left:
-      content: $footer_recto_right_content
-      #content: '{page-number} | {chapter-title}'
-    #center:
-    #  content: '{page-number}'
+      content: '{page-number}'
