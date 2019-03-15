@@ -14,7 +14,7 @@ MANPAGE = --backend=manpage
 HTML = --backend=html5 -a max-width=75em
 RAW_HTML = --backend=html5 -a stylesheet! -a source-highlighter!
 EXTENSIONS = -r ./extensions/asciidoctor-pdf-extensions.rb
-PDF = ${EXTENSIONS} --backend=pdf --require=asciidoctor-pdf -a pdf-fontsdir=fonts -a pdfmarks
+PDF = ${EXTENSIONS} --backend=pdf --require=asciidoctor-pdf -a pdf-fontsdir=fonts -a source-highlighter=pygments
 EPUB = --backend=epub3 --require=asciidoctor-epub3
 KINDLE = ${EPUB} -a ebook-format=kf8
 
