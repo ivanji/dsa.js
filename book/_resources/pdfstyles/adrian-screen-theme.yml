@@ -90,7 +90,8 @@ page:
   background_color: ffffff
   layout: portrait
   margin: [0.77in, 0.67in, 0.67in, 0.67in]
-  size: LETTER
+  # size: LETTER
+  size: A4
 
 base:
   align: justify
