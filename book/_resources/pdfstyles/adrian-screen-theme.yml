@@ -77,18 +77,19 @@ font:
       bold: AppleColorEmoji.ttf
       italic: AppleColorEmoji.ttf
       bold_italic: AppleColorEmoji.ttf
+
   fallbacks:
     - DejaVuSans # some emojis and characters
     - NotoEmoji # most of the emojis working
     - OpenSansEmoji # some work
     - Symbola # most works emojis some don't
-    - AppleColorEmoji # All of them works! B&W
+    - AppleColorEmoji # All of them but B&W
     - M+ 1p Fallback
 
 page:
   background_color: ffffff
   layout: portrait
-  margin: [0.5in, 0.67in, 0.67in, 0.67in]
+  margin: [0.77in, 0.67in, 0.67in, 0.67in]
   size: LETTER
 
 base:
@@ -310,14 +311,22 @@ table:
   foot_background_color: f0f0f0
   border_color: dddddd
   border_width: $base_border_width
-  # HACK accounting for line-height
-  cell_padding: [3, 3, 6, 3]
+  cell_padding: 3
 
 toc:
   dot_leader_font_color: a9a9a9
   #dot_leader_content: '. '
   indent: $horizontal_rhythm
   line_height: 1.4
+
+# additional attributes for content:
+# * {page-count}
+# * {page-number}
+# * {document-title}
+# * {document-subtitle}
+# * {chapter-title}
+# * {section-title}
+# * {section-or-chapter-title}
 
 header:
   font_color: A6A6A6
@@ -326,10 +335,11 @@ header:
   columns: =100%
   recto:
     center:
-      content: '{chapter-title}'
+      content: '{section-title}'
   verso:
     center:
-      content: '{document-title}'
+      # content: '{document-title}'
+      content: '{chapter-title}'
 
 footer:
   font_color: [61, 51, 45, 5]
@@ -341,6 +351,10 @@ footer:
   recto:
     right:
       content: '{page-number}'
+    center:
+      content: '{document-title}'
   verso:
     left:
       content: '{page-number}'
+    center:
+      content: '{document-title}'
