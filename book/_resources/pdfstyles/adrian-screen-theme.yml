@@ -155,8 +155,12 @@ heading:
   font_style: bold
   # h1 is used for part titles
   h1_font_size: floor($base_font_size * 2.6)
+
   # h2 is used for chapter titles
   h2_font_size: floor($base_font_size * 2.15)
+  # h2_margin_top: floor($base_font_size * 6.1) # not working :(
+  # h2_margin_bottom: floor($base_font_size * 4.1) # not working :(
+
   h3_font_size: round($base_font_size * 1.7)
   h4_font_size: $base_font_size_large
   h5_font_size: $base_font_size
