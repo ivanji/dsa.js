@@ -14,6 +14,12 @@ font:
       italic: notoserif-italic-subset.ttf
       bold_italic: notoserif-bold_italic-subset.ttf
 
+    Roboto Condensed:
+      normal: RobotoCondensed-Regular.ttf
+      bold: RobotoCondensed-Bold.ttf
+      italic: RobotoCondensed-Italic.ttf
+      bold_italic: RobotoCondensed-BoldItalic.ttf
+
     # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
       normal: mplus1mn-regular-ascii-conums.ttf
@@ -303,6 +309,7 @@ outline_list:
   #marker_font_color: 404040
 
 table:
+  font_family: Roboto Condensed
   background_color: $page_background_color
   #head_background_color: <hex value>
   #head_font_color: $base_font_color
