@@ -363,7 +363,7 @@ footer:
   # columns: <50% >50%
   recto:
     center:
-      content: '──────[ {page-number} ]──────'
+      content: '───────[  {page-number}  ]───────'
   verso:
     center:
-      content: '──────[ {page-number} ]──────'
+      content: '───────[  {page-number}  ]───────'
