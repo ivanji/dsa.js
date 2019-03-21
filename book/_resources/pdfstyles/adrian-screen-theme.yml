@@ -354,19 +354,16 @@ header:
       content: '{chapter-title}'
 
 footer:
-  font_color: [61, 51, 45, 5]
+  # font_color: [61, 51, 45, 5]
+  font_color: A6A6A6
   font_size: $base_font_size_small
   font_style: bold
   height: 0.5in
   line_height: 1
-  columns: <50% >50%
+  # columns: <50% >50%
   recto:
-    right:
-      content: '{page-number}'
     center:
-      content: '{document-title}'
+      content: '──────[ {page-number} ]──────'
   verso:
-    left:
-      content: '{page-number}'
     center:
-      content: '{document-title}'
+      content: '──────[ {page-number} ]──────'
